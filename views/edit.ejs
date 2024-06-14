@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" action="/listings/<%=item._id%>?_method=PATCH">
+        <div class="card">
+            <img src=<%=item.image%> alt="">
+            <div class="title">
+                title:
+                <input name="title" type="text" value="<%=item.title%>">
+            </div>
+            <div class="desc">
+                <textarea name="description" id="" cols="30" rows="10"><%=item.description%></textarea>
+            </div>
+            <div class="price">Price: <input name="price" type="number" value="<%= item.price%>"></div>
+        </div>
+        <button>Submit</button>
+    </form>
+</body>
+</html>

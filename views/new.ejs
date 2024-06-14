@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new Listing</title>
+</head>
+<body>
+
+    <h3>Create a new listing</h3>
+
+    <form method="post" action="/listings">
+        <label for="title">Title of the listing: </label>
+        <input name="title" type="text" required>
+        <br><br>
+
+        <label for="image">Image link </label>
+        <input name="image" type="text" placeholder="cat.jpg">
+        <br><br>
+
+        <label for="description">Description: </label>
+        <textarea name="description" id="" cols="30" rows="10" placeholder="Write something about the property"></textarea>
+        <br><br>
+
+        <label for="price">Price: </label>
+        <input name="price" type="number" placeholder="&#8377;1000">
+        <br><br>
+
+        <label for="location">Location: </label>
+        <input name="location" type="text" placeholder="Mumbai" required>
+        <br><br>
+
+        <label for="country">Country: </label>
+        <input name="country" type="text" placeholder="India">
+        <br><br>
+
+        <input type="submit">
+    </form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookYourStay</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Listings: </h2>
+
+    <form action="/listings/new">
+        <button>Add new</button>
+    </form>
+
+    <br><br><br>
+
+    <% for(let i=0;i<allListings.length;i++){ %>
+        <div class="card">
+            <img src=<%=allListings[i].image%> alt="">
+            <div class="title">
+                <p><%=allListings[i].title%></p>
+            </div>
+            <div class="desc">
+                <p><%=allListings[i].description%></p>
+            </div>
+            <div class="price">Price: <%=allListings[i].price%></div>
+            <a href="/listings/<%=allListings[i]._id%>">View</a> &nbsp;
+            <a href="/listings/<%=allListings[i]._id%>/edit">Edit</a>
+            <form method="post" action="/listings/<%=allListings[i]._id%>?_method=DELETE">
+                <button>delete</button>
+            </form>
+        </div>
+    <% } %>
+
+</body>
+</html>
+
