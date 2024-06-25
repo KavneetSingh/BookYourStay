@@ -1,33 +1,47 @@
 <% layout("/layouts/boilerplate") -%>
 <body>
 
-    <h3>Create a new listing</h3>
+    <br><br>
 
-    <form method="post" action="/listings">
-        <label for="title">Title of the listing: </label>
-        <input name="title" type="text" required>
-        <br><br>
-
-        <label for="image">Image link </label>
-        <input name="image" type="text" placeholder="cat.jpg">
-        <br><br>
-
-        <label for="description">Description: </label>
-        <textarea name="description" id="" cols="30" rows="10" placeholder="Write something about the property"></textarea>
-        <br><br>
-
-        <label for="price">Price: </label>
-        <input name="price" type="number" placeholder="&#8377;1000">
-        <br><br>
-
-        <label for="location">Location: </label>
-        <input name="location" type="text" placeholder="Mumbai" required>
-        <br><br>
-
-        <label for="country">Country: </label>
-        <input name="country" type="text" placeholder="India">
-        <br><br>
-
-        <input type="submit">
-    </form>
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h3>Create a new listing</h3>
+            <form method="post" action="/listings">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title of the listing: </label>
+                    <input name="title" type="text" class="form-control" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="image" class="form-label">Image link </label>
+                    <input name="image" type="text" class="form-control" placeholder="cat.jpg">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description: </label>
+                    <textarea name="description" id="" cols="30" rows="10" class="form-control" placeholder="Write something about the property"></textarea>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price: </label>
+                    <input name="price" type="number" class="form-control" placeholder="&#8377;1000">
+                </div>
+                
+                <div class="row">
+                    <div class="mb-3 col-md-5">
+                        <label for="location" class="form-label">Location: </label>
+                        <input name="location" type="text" class="form-control" placeholder="Mumbai" required>
+                    </div>
+                    
+                    <div class="mb-3 col-md-7">
+                        <label for="country" class="form-label">Country: </label>
+                        <input name="country" type="text" class="form-control" placeholder="India">
+                    </div>
+                </div>
+                <br><br>
+        
+                <button class="btn btn-dark post-btn">Post</button>
+            </form>
+        </div>
+    </div>
 </body>

@@ -9,32 +9,34 @@
     <br><br><br>
 
     <div class="listings">
-        <% for(let i=0;i<allListings.length;i++){ %>
-            <!-- <div class="listing"> -->
-                <div class="card" style="width: 18rem;">
-                    <div class="pic">
-                        <img class="card-img-top" src=<%=allListings[i].image%> alt="">
-                    </div>
-                    <div class="card-body">
-                        <div class="title">
-                            <p><%=allListings[i].title%></p>
+            <% for(let i=0;i<allListings.length;i++){ %>
+                <!-- <div class="listing"> -->
+                    <a class="card-click" href="/listings/<%=allListings[i]._id%>">
+                        <div class="card" style="width: 18rem;">
+                            <div class="pic">
+                                <img class="card-img-top" src=<%=allListings[i].image%> alt="">
+                            </div>
+                            <div class="card-body">
+                                <div class="title">
+                                    <p><%=allListings[i].title%></p>
+                                </div>
+                                <div class="desc">
+                                    <p><%=allListings[i].description%></p>
+                                </div>
+                                <div class="price">
+                                    <p><b> &#8377;<%= allListings[i].price.toLocaleString("en-IN") %></b> / night</p>
+                                </div>
+                                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                            </div>
+                            <!-- <a href="/listings/<%=allListings[i]._id%>/edit" > Edit </a> &nbsp; -->
+                            <!-- Edit</a> -->
                         </div>
-                        <div class="desc">
-                            <p><%=allListings[i].description%></p>
-                        </div>
-                        <div class="price">
-                            <p>Price:  <b><%=allListings[i].price%></b></p>
-                        </div>
-                      <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-                    </div>
-                    <!-- <a href="/listings/<%=allListings[i]._id%>">View</a> &nbsp;
-                    <a href="/listings/<%=allListings[i]._id%>/edit">Edit</a> -->
-                </div>
-                <!-- <form method="post" action="/listings/<%=allListings[i]._id%>?_method=DELETE">
-                    <button>delete</button>
-                </form> -->
-            <!-- </div> -->
-        <% } %>
+                    </a>
+                    <!-- <form method="post" action="/listings/<%=allListings[i]._id%>?_method=DELETE">
+                        <button>delete</button>
+                    </form> -->
+                <!-- </div> -->
+            <% } %>
     </div>
 
 </body>
