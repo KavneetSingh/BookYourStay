@@ -1,17 +1,39 @@
 <% layout("/layouts/boilerplate") -%>
 <body>
-    <form method="post" action="/listings/<%=item._id%>?_method=PATCH">
-        <div class="card">
-            <img src=<%=item.image%> alt="">
-            <div class="title">
-                title:
-                <input name="title" type="text" value="<%=item.title%>">
+    <div class="col-8 offset-2">
+        <form id="edit-form" method="post" action="/listings/<%=item._id%>?_method=PATCH">
+            <h2>Edit Your Listing</h2>
+            <div class="inputs mt-3">
+                <!-- <img src=<%=item.image%> alt=""> -->
+                <div class="title mb-3">
+                    <label for="title" class="form-label">Title: </label>
+                    <input class="form-control" name="title" type="text" value="<%=item.title%>">
+                </div>
+                <div class="img mb-3">
+                    <label for="img" class="form-label">Image link: </label>
+                    <input class="form-control" type="text" name="img" value="<%=item.image%>">
+                </div>
+                <div class="desc mb-3">
+                    <label for="description" class="form-label">Description: </label>
+                    <textarea class="form-control" name="description" id="" cols="30" rows="10"><%=item.description%></textarea>
+                </div>
+                <div class="row">
+                    <div class="price mb-3 col-md-4">
+                        <label for="price" class="form-label">Price: </label>
+                        <input class="form-control" name="price" type="number" value="<%= item.price%>">
+                    </div>
+                    <div class="country mb-4 col-md-8">
+                        <label for="country" class="form-label">Country: </label>
+                        <input class="form-control" name="country" type="text" value="<%= item.country %>">
+                    </div>
+                </div>
+                <div class="location mb-3">
+                    <label for="location" class="form-label">Location: </label>
+                    <input class="form-control" name="location" type="text" value="<%= item.location %>">
+                </div>
             </div>
-            <div class="desc">
-                <textarea name="description" id="" cols="30" rows="10"><%=item.description%></textarea>
-            </div>
-            <div class="price">Price: <input name="price" type="number" value="<%= item.price%>"></div>
-        </div>
-        <button>Submit</button>
-    </form>
+            <button class="btn btn-dark mt-4 post-btn">Edit</button>
+        </form>
+    </div>
+    
 </body>

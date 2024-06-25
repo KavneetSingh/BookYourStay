@@ -88,10 +88,11 @@ app.get("/listings/:id/edit", async (req,res)=>{
 app.patch("/listings/:id", async (req,res)=>{
     const {id}= req.params;
     console.log(req.body);
-    let {title, description, price}= req.body;
-    let item= await Listing.findByIdAndUpdate(id, {title: title, description: description, price: price});
+    let {title, img, description, price, country, location}= req.body;
+    console.log(req.body);
+    let item= await Listing.findByIdAndUpdate(id, {title: title, description: description, price: price, img: img, country: country, location: location});
     console.log("Successfully updated");
-    res.redirect("/listings");
+    res.redirect(`/listings/${id}`);
 })
 
 app.delete("/listings/:id", async (req,res)=>{
@@ -99,6 +100,7 @@ app.delete("/listings/:id", async (req,res)=>{
     console.log(id);
     await Listing.deleteOne({_id: id})
     console.log("Deleted");
+    
     res.redirect("/listings");
 })
 
