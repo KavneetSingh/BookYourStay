@@ -27,9 +27,6 @@ main()
     })
 
 
-app.listen(port, (req,res)=>{
-    console.log("Listening on port");
-})
 
 app.get("/", (req,res)=>{
     res.send("Requested");
@@ -104,7 +101,17 @@ app.delete("/listings/:id", async (req,res)=>{
     res.redirect("/listings");
 })
 
+app.use((err, req, res, next)=>{
+    res.send("something went wrong");
+})
+
+
+app.listen(port, (req,res)=>{
+    console.log("Listening on port");
+})
+
 // app.delete("/listings/:id", (req,res)=>{
 //     let {id}= req.params;
 // //     console.log(id);
 // });
+

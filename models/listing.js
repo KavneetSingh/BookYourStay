@@ -8,8 +8,8 @@ const listingSchema= new mongoose.Schema({
     description: String,
     image: {
         type: String,
-        default: "https://www.pexels.com/photo/beautiful-view-of-moraine-lake-2662116/",
-        set: (v) => v===""? "https://www.pexels.com/photo/beautiful-view-of-moraine-lake-2662116/" : v,
+        default: "https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg",
+        set: (v) => v===""? "https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg" : v,
     },
     price: Number,
     location: String,

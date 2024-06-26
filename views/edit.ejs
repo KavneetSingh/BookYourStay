@@ -1,13 +1,15 @@
 <% layout("/layouts/boilerplate") -%>
 <body>
     <div class="col-8 offset-2">
-        <form id="edit-form" method="post" action="/listings/<%=item._id%>?_method=PATCH">
+        <form id="edit-form" method="post" action="/listings/<%=item._id%>?_method=PATCH" class="needs-validation" novalidate>
             <h2>Edit Your Listing</h2>
             <div class="inputs mt-3">
                 <!-- <img src=<%=item.image%> alt=""> -->
                 <div class="title mb-3">
                     <label for="title" class="form-label">Title: </label>
-                    <input class="form-control" name="title" type="text" value="<%=item.title%>">
+                    <input class="form-control" name="title" type="text" value="<%=item.title%>" required>
+                    <div class="invalid-feedback">Please Enter a title</div>
+                    <div class="valid-feedback">Looks good!</div>
                 </div>
                 <div class="img mb-3">
                     <label for="img" class="form-label">Image link: </label>
@@ -15,24 +17,29 @@
                 </div>
                 <div class="desc mb-3">
                     <label for="description" class="form-label">Description: </label>
-                    <textarea class="form-control" name="description" id="" cols="30" rows="10"><%=item.description%></textarea>
+                    <textarea class="form-control" name="description" id="" cols="30" rows="4" 
+                    required><%=item.description%></textarea>
+                    <div class="invalid-feedback">Please add a short description</div>
                 </div>
                 <div class="row">
                     <div class="price mb-3 col-md-4">
                         <label for="price" class="form-label">Price: </label>
-                        <input class="form-control" name="price" type="number" value="<%= item.price%>">
+                        <input class="form-control" name="price" type="number" value="<%= item.price%>" required>
+                        <div class="invalid-feedback">Invalid Price!</div>
                     </div>
                     <div class="country mb-4 col-md-8">
                         <label for="country" class="form-label">Country: </label>
-                        <input class="form-control" name="country" type="text" value="<%= item.country %>">
+                        <input class="form-control" name="country" type="text" value="<%= item.country %>" required>
+                        <div class="invalid-feedback">Please enter the country</div>
                     </div>
                 </div>
                 <div class="location mb-3">
                     <label for="location" class="form-label">Location: </label>
-                    <input class="form-control" name="location" type="text" value="<%= item.location %>">
+                    <input class="form-control" name="location" type="text" value="<%= item.location %>" required>
+                    <div class="invalid-feedback">Please enter the location</div>
                 </div>
             </div>
-            <button class="btn btn-dark mt-4 post-btn">Edit</button>
+            <button class="btn btn-dark mt-4 post-btn">Save</button>
         </form>
     </div>
     
