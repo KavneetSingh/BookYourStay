@@ -4,7 +4,7 @@
 
 body{
     font-family: "Plus Jakarta Sans", sans-serif !important;
-    /* height: 100vh;  */
+    height: 100vh; 
 }
 
 #container-1{
@@ -204,7 +204,7 @@ a:hover{
 
 footer{
     color:rgb(200, 200, 200);
-    position: relative;
+    /* position: relative; */
     bottom: 0;
     /* margin:-20px -20px; */
     /* border: 2px solid rgb(222, 19, 19); */
