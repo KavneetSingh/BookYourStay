@@ -68,7 +68,7 @@ a:hover{
     text-decoration: none;
 }
 
-.card{
+.card1{
     height: 100%;
     width: 100%;
     /* margin: 10px 10px; */
@@ -96,7 +96,7 @@ a:hover{
     /* flex-grow: 1; */
 }
 
-.card:hover{
+.card1:hover{
     /* background-color: #eeeeeea3; */
     box-shadow: 0px 0px 15px #9a9a9a;
     /* text-decoration: none; */
@@ -147,7 +147,7 @@ a:hover{
     background-color: #eee;
 }
 
-.card img{
+.card1 img{
     min-height: 100%;
     /* position: absolute; */
     /* max-width: 160%;
@@ -157,7 +157,7 @@ a:hover{
     /* overflow-x: hidden; */
 }
 
-.card-body{
+.card1-body{
     height: 30%;
     width: 100%;
     /* display: flex; */
@@ -166,32 +166,32 @@ a:hover{
     padding: 10px;
 } 
 
-.card-body div{
+.card1-body div{
     margin: 0px;
     height: calc(100%/4);
     width: 100%;
     overflow: hidden;
 }
 
-.card-body .desc{
+.card1-body .desc{
     font-size: smaller;
     height: 40%;
     opacity: 0.8;
     margin-bottom: 6px;
 }
 
-.card-body .title{
+.card1-body .title{
     font-weight: 700;
     font-size: larger;
     margin-bottom: 2px;
 }
 
-.card-body .price{
+.card1-body .price{
     font-size: larger;
     color: rgba(0, 0, 0, 0.554);
 }
 
-.card-body .price b{
+.card1-body .price b{
     /* font-size: larger; */
     font-weight: 600;
     color: rgba(0, 0, 0, 0.939);
