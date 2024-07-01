@@ -12,8 +12,11 @@ const ejsMate= require('ejs-mate');
 app.engine("ejs", ejsMate);
 const listings= require('./routes/listing.js');
 const reviews= require("./routes/review.js");
+const session= require("express-session");
+const flash= require("connect-flash");
 
 const methodOverride= require("method-override");
+const { cookie } = require('express/lib/response.js');
 app.use(methodOverride('_method'));
 
 async function main() {
@@ -27,6 +30,26 @@ main()
         console.log(err);
     })
 
+
+const sessionOptions= {
+    secret: "mySuperSecretCode",
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        expires: Date.now() + 20000,
+        maxAge: 20000,
+        httpOnly: true
+    }
+};
+
+app.use(session(sessionOptions));
+app.use(flash());
+
+app.use((req, res, next)=>{
+    res.locals.success= req.flash("success");
+    res.locals.error= req.flash("error");
+    next();
+})
 
 //Home page
 app.get("/", (req, res, next)=>{
