@@ -258,3 +258,12 @@ footer{
     display: flex;
     justify-content: space-between;
 }
+
+.flex{
+    display: flex;
+    align-items: center;
+}
+
+.space-btw{
+    justify-content: space-between;
+}

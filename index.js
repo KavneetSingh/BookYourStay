@@ -40,7 +40,7 @@ const sessionOptions= {
     resave: false,
     saveUninitialized: true,
     cookie: {
-        expires: Date.now() + 20000,
+        expires: Date.now() + 1000 * 60 * 60 * 24,
         maxAge: 1000 * 60 * 60 * 24,      //1 day session
         httpOnly: true
     }
@@ -100,3 +100,5 @@ app.use((err, req, res, next)=>{
 app.listen(port, (req,res)=>{
     console.log("Listening on port");
 })
+
+//dummy user- user1, pass= User1Pass
