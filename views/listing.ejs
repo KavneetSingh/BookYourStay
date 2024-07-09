@@ -8,18 +8,21 @@
             <img class="card-img-top show-img mb-3" src=<%=item.image%> alt="listing-img">
             
             <div class="desc">
+                <p>Owned by- <i><%= item.owner.username %></i></p>
                 <p><%=item.description%></p>
             </div>
             <div class="location mb-3">
                 <span class="loc"><%=item.location%></span>, <span class="country"><%=item.country%></span>
             </div>
             <div class="price"><b>Price: &#8377;<%= item.price.toLocaleString("en-IN") %></b></div>
-            <div class="list-btns mt-4">
-                <a href="/listings/<%=item._id%>/edit" class="btn btn-dark post-btn"> Edit this Listing </a> &nbsp;
-                <form method="post" action="/listings/<%=item._id%>?_method=DELETE">
-                    <button class="btn btn-dark">delete</button>
-                </form>
-            </div>
+            <% if(currUser && currUser._id.equals(item.owner._id)) { %>
+                <div class="list-btns mt-4">
+                    <a href="/listings/<%=item._id%>/edit" class="btn btn-dark post-btn"> Edit this Listing </a> &nbsp;
+                    <form method="post" action="/listings/<%=item._id%>?_method=DELETE">
+                        <button class="btn btn-dark">delete</button>
+                    </form>
+                </div>
+            <% } %>
         </div>
 
         <hr>
