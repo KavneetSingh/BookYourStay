@@ -27,7 +27,8 @@
 
         <hr>
 
-        <div class="reviews mt-5">
+        <div class="reviews mt-4">
+            <% if(currUser) { %>
             <h4>Leave a review: </h4>
             <form method="POST" action="/listings/<%=item._id%>/reviews" class="needs-validation" novalidate>
                 <div class="mt-3">
@@ -41,6 +42,10 @@
                 </div>
                 <button class="btn btn-outline-dark mt-3">Submit</button>
             </form>
+            <% } %>
+            <%  if(!currUser) { %>
+                <h4>Login/signup to add a review</h4>
+            <% } %>
 
             <hr>
 
@@ -49,7 +54,7 @@
                 <% for(review of item.reviews) { %>
                     <div class="card col-6 ml-3 mr-3 mb-3">
                         <div class="card-body">
-                          <h5 class="card-title">Katie Minde</h5>
+                          <h5 class="card-title"><%= review.author.username %></h5>
                           <p class="card-text"><%=review.comment%></p>
                           <p class="card-text">Rating= <%=review.rating%></p>
                         </div>
